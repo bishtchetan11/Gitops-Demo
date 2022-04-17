@@ -1,0 +1,13 @@
+FROM python3
+
+RUN pip install flask
+
+RUN mkdir -p corpapp
+WORKDIR corpapp
+COPY main.py .
+ENV FLASK_APP=corpappmain.py
+
+ENV APP_NAME=CloudAcademy.DevOps
+ENV APP_VERSION=v1.0.0
+
+CMD [flask, run, --host=127.0.0.1]

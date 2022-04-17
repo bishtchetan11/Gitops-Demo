@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  annotations:
+    flux.weave.works/tag.example-app: glob:~1.0
+    flux.weave.works/automated: "true"
+  labels:
+    role: frontend
+    env: demo
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      role: frontend
+  template:
+    metadata:
+      labels:
+        role: frontend
+    spec:
+      containers:
+      - name: example-app
+        image: chetanbisht11/pythonapptest:1.0.0   # {"$imagepolicy": "flux-system:pythonapptest"}
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 80
