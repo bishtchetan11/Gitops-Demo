@@ -4,8 +4,8 @@ kind: Deployment
 metadata:
   name: frontend
   annotations:
-    flux.weave.works/tag.example-apps: glob:~1.0
-    flux.weave.works/automated: "true"
+    flux.weave.works/tag.example-apps: semver:~1.0
+    flux.weave.works/automated: 'true'
   labels:
     role: frontend
     env: demo
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image: chetanbisht11/pythonapptest:1.0.0   # {"$imagepolicy": "flux-system:pythonapptest"}
+        image:  docker.io/chetanbisht11/pythonapptest:1.0.0   # {"$imagepolicy": "flux-system:pythonapptest"}
         imagePullPolicy: Always
         ports:
         - name: http
