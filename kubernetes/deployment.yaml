@@ -10,7 +10,7 @@ metadata:
     role: frontend
     env: demo
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       role: frontend
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image:  docker.io/chetanbisht11/pythonapptest:1.0.0   # {"$imagepolicy": "flux-system:pythonapptest"}
+        image:  docker.io/chetanbisht11/pythonapptest:1.0.1   # {"$imagepolicy": "flux-system:pythonapptest"}
         imagePullPolicy: Always
         ports:
         - name: http
