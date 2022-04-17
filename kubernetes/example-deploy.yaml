@@ -7,8 +7,8 @@ metadata:
     app: example-app
     test: test
   annotations:
-    fluxcd.io/tag.example-app: semver:~1.0
-    fluxcd.io/automated: 'true'
+    fluxcd.io/tag.example-app: semver:~1
+    fluxcd.io/automated: "true"
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: aimvector/python:1.0.3
+        image: docker.io/aimvector/python:1.0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
