@@ -5,6 +5,7 @@ metadata:
   name: frontend
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/tag.example-apps: semver:~1
   labels:
     role: frontend
     env: demo
@@ -20,7 +21,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image:  docker.io/chetanbisht11/pythonapptest:1.0.1   # {"$imagepolicy": "flux-system:pythonapptest"}
+        image:  docker.io/chetanbisht11/pythonapptest:1.0.1   
         imagePullPolicy: Always
         ports:
         - name: http
