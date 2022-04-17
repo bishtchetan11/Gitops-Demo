@@ -4,8 +4,7 @@ kind: Deployment
 metadata:
   name: frontend
   annotations:
-    flux.weave.works/tag.example-apps: semver:~1.0
-    flux.weave.works/automated: 'true'
+    fluxcd.io/automated: "true"
   labels:
     role: frontend
     env: demo
