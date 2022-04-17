@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image:  docker.io/chetanbisht11/pythonapptest:1.0.1   
+        image:  docker.io/chetanbisht11/pythonapptest:1.0.4   
         imagePullPolicy: Always
         ports:
         - name: http
