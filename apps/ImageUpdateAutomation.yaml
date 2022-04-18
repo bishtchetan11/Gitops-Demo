@@ -7,7 +7,7 @@ spec:
   checkout:
     branch: master
     gitRepositoryRef:
-      name: imageupdate
+      name: flux-system
   commit:
     authorEmail: fluxcdbot@particule.io
     authorName: fluxcdbot
