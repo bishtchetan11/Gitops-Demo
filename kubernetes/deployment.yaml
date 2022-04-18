@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: default
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.example-apps: semver:~1
@@ -10,7 +11,7 @@ metadata:
     role: frontend
     env: demo
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       role: frontend
