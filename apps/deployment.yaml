@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +18,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image:  docker.io/chetanbisht11/pythonapptest:1.0.5   # {"$imagepolicy": "flux-system:imageupdate"}
+        image: docker.io/chetanbisht11/pythonapptest:1.0.5 # {"$imagepolicy": "flux-system:imageupdate"}
         imagePullPolicy: Always
         ports:
         - name: http
