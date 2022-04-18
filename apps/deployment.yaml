@@ -3,12 +3,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: staging
+  namespace: default
   labels:
     role: frontend
     env: demo
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       role: frontend
