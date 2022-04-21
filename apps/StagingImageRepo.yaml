@@ -1,8 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
-kind: ImageRepository
-metadata:
-  name: stagingimageupdate
-  namespace: flux-system
-spec:
-  image: docker.io/aimvector/python
-  interval: 1m0s
