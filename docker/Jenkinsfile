@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Scanning Repository') {
             steps {
-                echo 'Repository Scanned , Awesome!!'
+                echo 'Repository Scanned , Hello!!'
             }
         }
         stage('Build Image') {
