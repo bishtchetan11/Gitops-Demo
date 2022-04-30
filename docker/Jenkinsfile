@@ -12,6 +12,7 @@ pipeline {
         }
         stage('Build Image') {
         steps {
+            sh "pwd"
             sh 'docker build -t pythonapptest:1.2.1 ./docker/Dockerfile'
             }
        }
