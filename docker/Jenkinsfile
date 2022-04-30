@@ -13,7 +13,7 @@ pipeline {
         stage('Build Image') {
         steps {
             sh "pwd"
-            sh 'docker build -t pythonapptest:1.2.1 -f ./Dockerfile'
+            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.1 '
             }
        }
         stage('Pushing To DockerHub') {
