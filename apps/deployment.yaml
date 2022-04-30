@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: example-apps
-        image: docker.io/chetanbisht11/pythonapptest:1.2.1 # {"$imagepolicy": "flux-system:imageupdate"}
+        image: docker.io/chetanbisht11/pythonapptest:1.2.4 # {"$imagepolicy": "flux-system:imageupdate"}
         imagePullPolicy: Always
         ports:
         - name: http
