@@ -3,7 +3,7 @@ pipeline {
     environment {
           dockerhub=credentials('dockerid')
           NAME = "pythonapptest"
-          VERSION = "1.2.5"
+          VERSION = "1.2.7"
           IMAGE = "${NAME}:${VERSION}"
 
            }
@@ -17,14 +17,14 @@ pipeline {
         stage('Build Image') {
         steps {
             sh "pwd"
-            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.6  ./docker/'
+            sh 'docker build -f ./docker/Dockerfile -t ${IMAGE}  ./docker/'
             }
        }
         stage('Pushing To DockerHub') {
         steps {
-            sh 'docker tag  pythonapptest:1.2.6 chetanbisht11/pythonapptest:1.2.6'
+            sh 'docker tag  ${IMAGE} chetanbisht11/${IMAGE}'
             sh 'echo $dockerhub_PSW | docker login -u  $dockerhub_USR --password-stdin'
-            sh 'docker push chetanbisht11/pythonapptest:1.2.6'
+            sh 'docker push chetanbisht11/${IMAGE}'
 
             }
        }
