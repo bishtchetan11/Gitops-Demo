@@ -1,10 +1,27 @@
 pipeline {
     agent any
+    environment {
+          dockerhub=credentials('dockerid')
+
+           }
     stages {
-        stage('Hello') {
+        stage('Scanning Repository') {
             steps {
-                echo 'Hello World Jenkins'
+                echo 'Repository Scanned'
             }
         }
+        stage('Build Image') {
+        steps {
+            sh 'docker build -t pythonapptest:1.2.1 .'
+            }
+       }
+        stage('Pushing To DockerHub') {
+        steps {
+            sh 'docker tag  pythonapptest:1.2.1 chetanbisht11/pythonapptest:1.2.1'
+            sh 'echo $dockerhub_PSW | docker login -u  $dockerhub_USR --password-stdin'
+            sh 'docker push chetanbisht11/pythonapptest:1.2.1'
+
+            }
+       }
     }
 }
