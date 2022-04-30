@@ -7,20 +7,20 @@ pipeline {
     stages {
         stage('Scanning Repository') {
             steps {
-                echo 'Repository Scanned !!'
+                echo 'Repository Scanned , Awesome!!'
             }
         }
         stage('Build Image') {
         steps {
             sh "pwd"
-            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.1  ./docker/'
+            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.2  ./docker/'
             }
        }
         stage('Pushing To DockerHub') {
         steps {
-            sh 'docker tag  pythonapptest:1.2.1 chetanbisht11/pythonapptest:1.2.1'
+            sh 'docker tag  pythonapptest:1.2.2 chetanbisht11/pythonapptest:1.2.2'
             sh 'echo $dockerhub_PSW | docker login -u  $dockerhub_USR --password-stdin'
-            sh 'docker push chetanbisht11/pythonapptest:1.2.1'
+            sh 'docker push chetanbisht11/pythonapptest:1.2.2'
 
             }
        }
