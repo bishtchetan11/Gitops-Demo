@@ -2,25 +2,29 @@ pipeline {
     agent any
     environment {
           dockerhub=credentials('dockerid')
+          NAME = "pythonapptest"
+          VERSION = "1.2.5"
+          IMAGE = "${NAME}:${VERSION}"
 
            }
     stages {
         stage('Scanning Repository') {
             steps {
                 echo 'Repository Scanned , Done!!'
+                echo "${IMAGE}"
             }
         }
         stage('Build Image') {
         steps {
             sh "pwd"
-            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.5  ./docker/'
+            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.6  ./docker/'
             }
        }
         stage('Pushing To DockerHub') {
         steps {
-            sh 'docker tag  pythonapptest:1.2.5 chetanbisht11/pythonapptest:1.2.5'
+            sh 'docker tag  pythonapptest:1.2.6 chetanbisht11/pythonapptest:1.2.6'
             sh 'echo $dockerhub_PSW | docker login -u  $dockerhub_USR --password-stdin'
-            sh 'docker push chetanbisht11/pythonapptest:1.2.5'
+            sh 'docker push chetanbisht11/pythonapptest:1.2.6'
 
             }
        }
