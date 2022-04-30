@@ -3,7 +3,7 @@ pipeline {
     environment {
           dockerhub=credentials('dockerid')
           NAME = "pythonapptest"
-          VERSION = "1.2.7"
+          VERSION = "1.2.8"
           IMAGE = "${NAME}:${VERSION}"
 
            }
@@ -14,7 +14,7 @@ pipeline {
                 echo "${IMAGE}"
             }
         }
- /**       stage('Build Image') {
+        stage('Build Image') {
         steps {
             sh "pwd"
             sh 'docker build -f ./docker/Dockerfile -t ${IMAGE}  ./docker/'
@@ -27,6 +27,6 @@ pipeline {
             sh 'docker push chetanbisht11/${IMAGE}'
 
             }
-       }******/
+       }
     }
 }
