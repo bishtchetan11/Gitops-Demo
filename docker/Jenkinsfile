@@ -13,14 +13,14 @@ pipeline {
         stage('Build Image') {
         steps {
             sh "pwd"
-            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.3  ./docker/'
+            sh 'docker build -f ./docker/Dockerfile -t pythonapptest:1.2.4  ./docker/'
             }
        }
         stage('Pushing To DockerHub') {
         steps {
-            sh 'docker tag  pythonapptest:1.2.3 chetanbisht11/pythonapptest:1.2.3'
+            sh 'docker tag  pythonapptest:1.2.4 chetanbisht11/pythonapptest:1.2.4'
             sh 'echo $dockerhub_PSW | docker login -u  $dockerhub_USR --password-stdin'
-            sh 'docker push chetanbisht11/pythonapptest:1.2.3'
+            sh 'docker push chetanbisht11/pythonapptest:1.2.4'
 
             }
        }
