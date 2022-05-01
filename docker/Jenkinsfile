@@ -31,9 +31,7 @@ pipeline {
     }
     post {
     always {
-        emailext body: '$PROJECT_NAME - Build # - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.', 
-        subject: '$PROJECT_NAME - Build # $BUILD_STATUS!',
-        mail to: "chetanbisht11@gmail.com"
+        mail to: "chetanbisht11@gmail.com" , body: '$PROJECT_NAME - Build # - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.', subject: '$PROJECT_NAME - Build # $BUILD_STATUS!'
     }
 }
 }
