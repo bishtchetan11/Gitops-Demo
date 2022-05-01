@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Scanning Repository') {
             steps {
-                echo 'Repository Scanned , Done !!'
+                echo 'Repository Scanned , Done  !!'
                 echo "${IMAGE}"
             }
         }
