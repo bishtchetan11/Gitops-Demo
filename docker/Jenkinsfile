@@ -3,7 +3,7 @@ pipeline {
     environment {
           dockerhub=credentials('dockerid')
           NAME = "pythonapptest"
-          VERSION = "1.2.13"
+          VERSION = "1.2.14"
           IMAGE = "${NAME}:${VERSION}"
 
            }
