@@ -31,7 +31,7 @@ pipeline {
     }
     post {
     always {
-        mail to: "chetan.bisht@rabobank.nl , body: 'A new docker image has been uploaded to Docker Hub -> ${IMAGE}'
+        mail to: "chetan.bisht@rabobank.nl , body: 'A new docker image has been uploaded to Docker Hub -> $IMAGE'
     }
 }
 }
