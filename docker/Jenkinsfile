@@ -31,7 +31,7 @@ pipeline {
     }
     post {
     always {
-        mail to: "chetan.bisht@rabobank.nl" , body: '$PROJECT_NAME - Build # - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.', subject: '$PROJECT_NAME - Build # $BUILD_STATUS!'
+        mail to: "chetan.bisht@rabobank.nl" , body: 'A new image has been uploaded to GitHub -> $IMAGE', subject: 'New Image Build'
     }
 }
 }
