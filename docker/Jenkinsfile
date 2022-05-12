@@ -3,7 +3,7 @@ pipeline {
     environment {
           dockerhub=credentials('dockerid')
           NAME = "pythonapptest"
-          VERSION = "1.2.15"
+          VERSION = "1.2.16"
           IMAGE = "${NAME}:${VERSION}"
 
            }
@@ -31,7 +31,7 @@ pipeline {
     }
     post {
     always {
-        mail to: "chetan.bisht@rabobank.nl" , body: 'A new image has been uploaded to GitHub -> $IMAGE', subject: 'New Image Build'
+        mail to: "chetan.bisht@rabobank.nl" , body: 'A new image has been uploaded to GitHub -> ${IMAGE}', subject: 'New Image Build'
     }
 }
 }
